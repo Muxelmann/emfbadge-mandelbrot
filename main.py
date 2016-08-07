@@ -21,8 +21,8 @@ def get_color(val):
 
 def m(x, y):
 	# Normalised coordinates
-	a = 4.0 * (x/size[0] - 0.5)
-	b = 3.0 * (y/size[1] - 0.5)
+	a = 4.0 * (x/size[0] - 0.66)
+	b = 3.0 * (y/size[1] - 0.50)
 
 	z = 0
 	for n in range(32):
