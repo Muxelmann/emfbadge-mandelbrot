@@ -23,23 +23,11 @@ def m(x, y):
 	# Normalised coordinates
 	a = 4.0 * (x/size[0] - 0.5)
 	b = 3.0 * (y/size[1] - 0.5)
-	# Starting z
-	z = [0, 0]
-	z_n = [0, 0]
 
-	# Formula: z_{n+1} = z_n^2 + (a+ib)
-
-	n = 0
-	for n in range(0, 32):
-		# Squaring the complex number
-		z_n[0] = z[0]**2 - z[1]**2
-		z_n[1] = 2.0 * z[0] * z[1]
-		z = z_n
-
-		# Adding a+jb
-		z[0] += a
-		z[1] += b
-		if z[0]**2 + z[1]**2 > 4:
+	z = 0
+	for n in range(32):
+		z = z**2 + a + b*1j
+		if abs(z) > 4:
 			break
 	return 31-n
 
